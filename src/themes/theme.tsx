@@ -1,5 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 
+import * as React from 'react';
+
 const fontSizes: any = [14, 20, 96];
 fontSizes.body = fontSizes[0];
 fontSizes.bodyExtraLarge = fontSizes[1];
@@ -16,9 +18,9 @@ const theme = {
   },
 };
 
-interface Props {
-  children: React.ReactNode;
-}
+type Props = {
+  children?: React.ReactNode;
+};
 
 export const Theme: React.FC<Props> = ({ children }) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
